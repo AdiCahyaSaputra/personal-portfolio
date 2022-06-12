@@ -8,7 +8,7 @@ import ProjectPreview from '../components/ProjectPreview'
 import { ProjectContext, ProjectContextInterface } from '../context/ProjectContext'
 import { GetServerSideProps } from 'next'
 import project from '../public/json/project.json'
-
+  
 export const getServerSideProps: GetServerSideProps = async () => {
   const data = project;
 
@@ -19,7 +19,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
   }
 }
 
-const Home: NextPage = ({ data }: any) => {
+const Home: NextPage = () => {
   const [projectPreviewData, setProjectPreviewData] = useState({
     projectName: "Toko Online Komunitas Discord",
     projectImage: "",
@@ -53,7 +53,7 @@ const Home: NextPage = ({ data }: any) => {
         <BioSection />
         <ProjectContext.Provider value={ProjectCTX}>
           { isOnPreview && ( <ProjectPreview/> ) }
-          <ProjectSection data={data} />
+          <ProjectSection />
         </ProjectContext.Provider>
         <Footer />
       </div>

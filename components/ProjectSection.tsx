@@ -2,8 +2,9 @@ import React from 'react'
 import FrameworkIcons from './FrameworkIcons'
 import ProjectCard from './ProjectCard'
 import { ProjectContextInterface } from '../context/ProjectContext'
+import data from '../public/json/project.json'
 
-const ProjectSection: React.FC = ({ data }: any) => {
+const ProjectSection: React.FC = () => {
 	return (
 		<>
 			<section className='w-full relative py-12 z-30 backdrop-blur-sm min-h-screen bg-black/30 flex justify-center items-center'>
