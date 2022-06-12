@@ -11,9 +11,9 @@ const ProjectSection: React.FC = ({ data }: any) => {
 					<div className='flex flex-col h-full justify-center items-center'>
 						<h1 className='py-1.5 mb-4 w-max text-xl text-white font-bold border-b-2 border-white'>Current Skills</h1>
 						<div className='flex justify-center items-center space-x-4'>
-							<FrameworkIcons srcIcon='/icons/nextjs.png' bg="bg-white"/>
-							<FrameworkIcons srcIcon='/icons/laravel.png' bg="bg-white" />
-							<FrameworkIcons srcIcon='/icons/tailwind.svg' bg="bg-white"/>
+							<FrameworkIcons size={30} priority={false} srcIcon='/icons/nextjs.png' bg="bg-white"/>
+							<FrameworkIcons size={30} priority={false} srcIcon='/icons/laravel.png' bg="bg-white" />
+							<FrameworkIcons size={30} priority={false} srcIcon='/icons/tailwind.svg' bg="bg-white"/>
 						</div>
 						<h1 className='py-1.5 mb-4 w-max text-xl text-white font-bold border-b-2 border-white mt-16'>My Latest Project</h1>
 						<article className='w-full'>

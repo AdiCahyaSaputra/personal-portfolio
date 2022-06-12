@@ -39,7 +39,7 @@ const ProjectPreview: React.FC = () => {
 						<h1 className={`mt-4 ${loading && 'p-4 bg-white/60 animate-pulse'} transition-all ${closeProjectPreview && '-translate-x-full'} text-white font-mono font-bold text-xl md:text-2xl`}>{ !loading && context?.data.projectName }</h1>
 						<p className={`mt-2 ${loading && 'p-2 bg-gray-500 animate-pulse'} transition-all ${closeProjectPreview && '-translate-x-full'} text-white md:text-lg font-light`}>{ !loading && context?.data.projectDesc }</p>
 						<div onClick={() => router.push(context?.data.projectURL)} className={`p-2 group flex ${!loading && 'w-max'} transition-all duration-200 ${closeProjectPreview && '-translate-x-full' } items-center space-x-2 mt-6 bg-black`}>
-							<FrameworkIcons srcIcon='/icons/github.svg' bg="bg-black" size={20} />
+							<FrameworkIcons priority={false} srcIcon='/icons/github.svg' bg="bg-black" size={20} />
 							<p className={`group-hover:text-white/60 ${loading && 'p-2 bg-black animate-pulse'} px-1.5 font-mono text-white text-sm line-clamp-1`}>{ !loading && 'Check On Github' }</p>
 						</div>
 					</article> 
