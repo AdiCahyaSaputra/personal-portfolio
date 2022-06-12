@@ -23,7 +23,7 @@ const BioSection: React.FC = () => {
 						</div>
 					</button>
 					<button onClick={() => router.push('https://github.com/AdiCahyaSaputra')} className='group mt-4 py-2 px-4 bg-black flex items-center space-x-3'>
-						<FrameworkIcons srcIcon='/icons/github.svg' bg="bg-black" priority={true}/>
+						<FrameworkIcons size={30} srcIcon='/icons/github.svg' bg="bg-black" priority={true}/>
 						<p className='text-white group-hover:text-white/60 font-bold'>Click Me</p>
 					</button>
 				</div>
