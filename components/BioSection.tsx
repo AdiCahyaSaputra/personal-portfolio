@@ -1,8 +1,11 @@
 import React, {useState} from 'react'
 import Image from 'next/image'
+import FrameworkIcons from './FrameworkIcons';
+import {useRouter} from 'next/router';
 
 const BioSection: React.FC = () => {
 	const [nameActive, setNameActive] = useState(false);
+	const router = useRouter();
 
 	return (
 		<>
@@ -18,6 +21,10 @@ const BioSection: React.FC = () => {
 						<div className={`flex justify-center items-center font-bold font-mono absolute h-full ${nameActive ? 'top-0' : '-top-full'} transition-all duration-500 inset-x-0 py-4 bg-white`}>
 							Frontend Engineer
 						</div>
+					</button>
+					<button onClick={() => router.push('https://github.com/AdiCahyaSaputra')} className='group mt-4 py-2 px-4 bg-black flex items-center space-x-3'>
+						<FrameworkIcons srcIcon='/icons/github.svg' bg="bg-black" priority={true}/>
+						<p className='text-white group-hover:text-white/60 font-bold'>Click Me</p>
 					</button>
 				</div>
 			</section>

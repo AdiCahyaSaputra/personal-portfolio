@@ -1,8 +1,9 @@
 import React from 'react'
 import FrameworkIcons from './FrameworkIcons'
 import ProjectCard from './ProjectCard'
+import { ProjectContextInterface } from '../context/ProjectContext'
 
-const ProjectSection: React.FC = () => {
+const ProjectSection: React.FC = ({ data }: any) => {
 	return (
 		<>
 			<section className='w-full relative py-12 z-30 backdrop-blur-sm min-h-screen bg-black/30 flex justify-center items-center'>
@@ -16,9 +17,9 @@ const ProjectSection: React.FC = () => {
 						</div>
 						<h1 className='py-1.5 mb-4 w-max text-xl text-white font-bold border-b-2 border-white mt-16'>My Latest Project</h1>
 						<article className='w-full'>
-							<ProjectCard />
-							<ProjectCard />
-							<ProjectCard />
+							{ data.map(({ projectName, projectImage, projectDesc, projectURL }: ProjectContextInterface['data']) => ( 
+								<ProjectCard projectName={projectName} projectImage={projectImage} projectDesc={projectDesc} projectURL={projectURL} />
+							)) }
 						</article>
 					</div>
 				</main>

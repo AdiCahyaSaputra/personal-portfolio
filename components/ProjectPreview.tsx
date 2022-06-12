@@ -1,47 +1,51 @@
 import React, { useEffect, useState } from "react"
 import FrameworkIcons from "./FrameworkIcons"
+import { useProjectContext } from '../context/ProjectContext'
+import Image from 'next/image'
+import {useRouter} from "next/router"
 
-interface ProjectPreviewProps {
-	data: {
-		projectName: string,
-		projectImage: string,
-		projectDesc: string,
-		projectURL: string
-	}
-}
-
-const ProjectPreview: React.FC<ProjectPreviewProps> = ({ data }) => {
+const ProjectPreview: React.FC = () => {
   const [closeProjectPreview, setCloseProjectPreview] = useState(false);
 	const [closeOverlay, setCloseOverlay] = useState('');
-	
+	const [loading, setLoading] = useState(true);
+
+	const context = useProjectContext();
+	const router = useRouter();
+
 	useEffect(() => {
 		if(closeProjectPreview) {
-			setTimeout(() => setCloseOverlay("hidden"), 400);
+			setTimeout(() => {
+				setCloseOverlay("hidden");
+				context?.setOnPreview(false);
+			}, 400);
 		}
 	}, [closeProjectPreview]);
+
+	useEffect(() => {
+		setTimeout(() => setLoading(false), 500);
+	}, []);
 
 	return (
 		<>
 			<div className={`fixed transition-all ${closeOverlay} inset-0 bg-black/75 z-40`}>
 
-				<div className={`fixed overflow-y-auto z-50 p-4 delay-200 transition-all duration-300 overflow-hidden ${closeProjectPreview ? '-left-20 w-0' : 'w-10/12 md:w-5/12'} inset-y-0 bg-red-600`}>
+				<div className={`fixed overflow-y-auto z-50 p-4 delay-200 transition-all duration-300 overflow-hidden ${closeProjectPreview ? '-left-20 w-0' : 'w-10/12 md:w-5/12'} inset-y-0 bg-blue-600`}>
 					<header>
-						<div className={`w-full transition-all duration-100 ${closeProjectPreview && '-translate-x-full'} aspect-video bg-white mx-auto`}></div>
+						<div className={`w-full flex justify-center items-center transition-all duration-100 ${closeProjectPreview && '-translate-x-full'} aspect-video bg-white ${loading && 'animate-pulse'} mx-auto`}>
+							{ !loading && ( <Image src={context?.data.projectImage} width={1280} height={720}/> ) }
+						</div>
 					</header>
 					<article>
-						<h1 className={`mt-4 transition-all ${closeProjectPreview && '-translate-x-full'} text-white font-mono font-bold text-xl md:text-2xl`}>{ data.projectName }</h1>
-						<p className={`mt-4 transition-all ${closeProjectPreview && '-translate-x-full'} text-white md:text-lg font-light`}>{ data.projectDesc }</p>
-						<div className={`flex transition-all duration-200 ${closeProjectPreview && '-translate-x-full' } items-center space-x-2 mt-6 bg-black`}>
-							<FrameworkIcons srcIcon='/icons/github.svg' bg="bg-black" />
-							<p className='border-l border-gray-100 px-2 font-mono text-white text-sm line-clamp-1'>{ data.projectName }</p>
+						<h1 className={`mt-4 ${loading && 'p-4 bg-white/60 animate-pulse'} transition-all ${closeProjectPreview && '-translate-x-full'} text-white font-mono font-bold text-xl md:text-2xl`}>{ !loading && context?.data.projectName }</h1>
+						<p className={`mt-2 ${loading && 'p-2 bg-gray-500 animate-pulse'} transition-all ${closeProjectPreview && '-translate-x-full'} text-white md:text-lg font-light`}>{ !loading && context?.data.projectDesc }</p>
+						<div onClick={() => router.push(context?.data.projectURL)} className={`p-2 group flex ${!loading && 'w-max'} transition-all duration-200 ${closeProjectPreview && '-translate-x-full' } items-center space-x-2 mt-6 bg-black`}>
+							<FrameworkIcons srcIcon='/icons/github.svg' bg="bg-black" size={20} />
+							<p className={`group-hover:text-white/60 ${loading && 'p-2 bg-black animate-pulse'} px-1.5 font-mono text-white text-sm line-clamp-1`}>{ !loading && 'Check On Github' }</p>
 						</div>
-					</article>  
+					</article> 
 				</div>
-				<div className='w-10/12 md:w-5/12 relative'>
-					<div onClick={() => setCloseProjectPreview(!closeProjectPreview)} className='w-12 hover:bg-red-700 hover:text-white font-bold transition-colors duration-200 hover:shadow-red-600/60 hover:shadow-md aspect-square flex justify-center items-center bg-white text-gray-700 absolute top-2 -right-14'>
-						X
-					</div>
-				</div>
+
+				<div onClick={() => setCloseProjectPreview(!closeProjectPreview)} className="absolute w-2/12 md:w-7/12 inset-y-0 top-0 right-0"></div>
 
 			</div>
 		</>
