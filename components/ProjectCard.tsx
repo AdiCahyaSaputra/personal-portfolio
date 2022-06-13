@@ -1,8 +1,16 @@
 import React from 'react'
-import { ProjectContextInterface, useProjectContext } from '../context/ProjectContext'
+import { useProjectContext } from '../context/ProjectContext'
 import Image from 'next/image'
 
-const ProjectCard: React.FC<ProjectContextInterface['data']> = ({ projectName, projectImage, projectDesc, projectURL }) => {
+interface ProjectCardProps {
+	keyId: number,
+	projectName: string,
+	projectImage: string,
+	projectDesc: string,
+	projectURL: string
+}
+
+const ProjectCard: React.FC<ProjectCardProps> = ({ keyId, projectName, projectImage, projectDesc, projectURL }) => {
 	const context = useProjectContext();
 
 	const onClickHandler = () => {
@@ -14,7 +22,7 @@ const ProjectCard: React.FC<ProjectContextInterface['data']> = ({ projectName, p
 
 	return (
 		<>
-			<article onClick={onClickHandler} className='group p-3 w-full mx-auto flex items-center flex-col'>
+			<article key={keyId} onClick={onClickHandler} className='group p-3 w-full mx-auto flex items-center flex-col'>
 				<div className='w-full flex justify-center items-center md:w-6/12 aspect-video bg-white'>
 					<Image src={projectImage} width={1280} height={720}/>
 				</div>

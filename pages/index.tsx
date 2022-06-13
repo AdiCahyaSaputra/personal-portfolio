@@ -3,7 +3,7 @@ import Head from 'next/head'
 import BioSection from '../components/BioSection'
 import ProjectSection from '../components/ProjectSection'
 import Footer from '../components/Footer'
-import {useEffect, useState} from 'react'
+import {useState} from 'react'
 import ProjectPreview from '../components/ProjectPreview'
 import { ProjectContext, ProjectContextInterface } from '../context/ProjectContext'
 import { GetServerSideProps } from 'next'
@@ -38,11 +38,6 @@ const Home: NextPage = () => {
       setProjectPreviewData(data);
     }
   }
-
-  useEffect(() => {
-    console.log(projectPreviewData);
-    console.log(isOnPreview);
-  }, [projectPreviewData, isOnPreview]);
 
   return (
     <>
