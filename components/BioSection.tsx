@@ -14,7 +14,7 @@ const BioSection: React.FC = () => {
 
 	return (
 		<>
-			<section className='w-full h-screen bg-blue-900'>
+			<section className='w-full h-screen bg-blue-800'>
 				<div className={`p-4 items-center container fixed z-20 w-full left-[50%] -translate-x-[50%] top-0 mx-auto flex flex-col justify-center`}>
 					<div className={`mt-16 w-10/12 md:w-6/12`}>
 						<Image src="/head.png" priority width={1024} height={1024} />
@@ -28,9 +28,9 @@ const BioSection: React.FC = () => {
 								Frontend Engineer
 							</div>
 						</button>
-						<button onClick={() => router.push('https://github.com/AdiCahyaSaputra')} className={`group transition-all delay-75 ${loading && '-translate-x-full'} mt-4 py-2 px-4 bg-black flex items-center space-x-3`}>
-							<FrameworkIcons size={30} srcIcon='/icons/github.svg' bg="bg-black" priority={true}/>
-							<p className='text-white group-hover:text-white/60 font-bold'>Click Me</p>
+						<button onClick={() => router.push('https://github.com/AdiCahyaSaputra')} className={`group transition-all delay-75 ${loading && '-translate-x-full'} mt-4 bg-black flex items-center`}>
+							<FrameworkIcons size={18} srcIcon='/icons/github.svg' bg="bg-black" priority={true}/>
+							<p className='text-white group-hover:text-white/60 font-bold pr-3 text-sm'>Click Me</p>
 						</button>
 					</div>
 				</div>
