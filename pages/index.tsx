@@ -6,10 +6,10 @@ import Footer from '../components/Footer'
 import {useState} from 'react'
 import ProjectPreview from '../components/ProjectPreview'
 import { ProjectContext, ProjectContextInterface } from '../context/ProjectContext'
-import { GetServerSideProps } from 'next'
+import { GetStaticProps } from 'next'
 import project from '../public/json/project.json'
   
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const data = project;
 
   return {

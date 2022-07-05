@@ -18,8 +18,8 @@ const ProjectSection: React.FC = () => {
 						</div>
 						<h1 className='py-1.5 mb-4 w-max text-xl text-white font-bold border-b-2 border-white mt-16'>My Latest Project</h1>
 						<article className='w-full'>
-							{ data.map(({ projectName, projectImage, projectDesc, projectURL }: ProjectContextInterface['data']) => ( 
-								<ProjectCard keyId={Math.round(Math.random())} projectName={projectName} projectImage={projectImage} projectDesc={projectDesc} projectURL={projectURL} />
+							{ data.map(({ projectName, projectImage, projectDesc, projectURL }: ProjectContextInterface['data'], index) => ( 
+								<ProjectCard keyId={index} projectName={projectName} projectImage={projectImage} projectDesc={projectDesc} projectURL={projectURL} />
 							)) }
 						</article>
 					</div>
