@@ -3,14 +3,13 @@ import { useProjectContext } from '../context/ProjectContext'
 import Image from 'next/image'
 
 interface ProjectCardProps {
-	keyId: number,
 	projectName: string,
 	projectImage: string,
 	projectDesc: string,
 	projectURL: string
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ keyId, projectName, projectImage, projectDesc, projectURL }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ projectName, projectImage, projectDesc, projectURL }) => {
 	const context = useProjectContext();
 
 	const onClickHandler = () => {
@@ -22,12 +21,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ keyId, projectName, projectIm
 
 	return (
 		<>
-			<article key={keyId} onClick={onClickHandler} className='group p-3 w-full mx-auto flex items-center flex-col'>
-				<div className='w-full flex justify-center items-center md:w-6/12 aspect-video bg-white'>
-					<Image src={projectImage} width={1280} height={720}/>
+			<article onClick={onClickHandler} className='group p-3 w-full md:w-4/12 mx-auto flex items-center flex-col'>
+				<div className='w-full flex overflow-hidden justify-center items-center aspect-video bg-white'>
+					<Image src={projectImage} width={1280} height={720} className="hover:scale-110 transition-all"/>
 				</div>
-				<div className='p-2 md:w-6/12 group-hover:bg-red-600/80 group-hover:shadow-red-600/30 group-hover:shadow-md group-hover:backdrop-blur-md w-full text-center bg-red-600'>
-					<p className="text-white font-light text-lg w-full">{ projectName }</p>
+				<div className='p-2 cursor-pointer group-hover:bg-black/80 group-hover:shadow-black-600/30 group-hover:shadow-md group-hover:backdrop-blur-md w-full text-center bg-black'>
+					<p className="text-white hover:-translate-y-1 transition-all font-light text-lg w-full">{ projectName }</p>
 				</div>
 			</article>
 		</>

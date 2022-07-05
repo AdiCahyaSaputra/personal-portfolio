@@ -36,9 +36,9 @@ const ProjectPreview: React.FC = () => {
 						</div>
 					</header>
 					<article>
-						<h1 className={`mt-4 ${loading && 'p-4 bg-white/60 animate-pulse'} ${closeProjectPreview && '-translate-x-full'} text-white font-mono font-bold text-xl md:text-lg`}>{ !loading && context?.data.projectName }</h1>
-						<p className={`mt-2 ${loading && 'p-2 bg-gray-500 animate-pulse'}  ${closeProjectPreview && '-translate-x-full'} text-white md:text-sm font-light`}>{ !loading && context?.data.projectDesc }</p>
-						<div onClick={() => router.push(context?.data.projectURL!)} className={`group flex ${!loading && 'w-max'} duration-200 ${closeProjectPreview && '-translate-x-full' } items-center mt-6 bg-black`}>
+						<h1 className={`mt-4 ${loading && 'p-4 bg-white/60 animate-pulse'} ${closeProjectPreview && '-translate-x-full'} text-white font-mono font-bold text-xl md:text-2xl`}>{ !loading && context?.data.projectName }</h1>
+						<p className={`${loading && 'p-2 mt-2 bg-gray-500 animate-pulse'}  ${closeProjectPreview && '-translate-x-full'} text-white md:text-lg font-light`}>{ !loading && context?.data.projectDesc }</p>
+						<div onClick={() => router.push(context?.data.projectURL!)} className={`group flex w-max cursor-pointer ${loading && 'w-6/12'} duration-200 ${closeProjectPreview && '-translate-x-full' } items-center mt-6 bg-black`}>
 							<FrameworkIcons priority={false} srcIcon='/icons/github.svg' bg="bg-black" size={18} />
 							<p className={`group-hover:text-white/60 ${loading && 'p-2 bg-black animate-pulse'} pr-3 font-mono text-white text-sm line-clamp-1`}>{ !loading && 'Check On Github' }</p>
 						</div>

@@ -3,7 +3,7 @@ import Head from 'next/head'
 import BioSection from '../components/BioSection'
 import ProjectSection from '../components/ProjectSection'
 import Footer from '../components/Footer'
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import ProjectPreview from '../components/ProjectPreview'
 import { ProjectContext, ProjectContextInterface } from '../context/ProjectContext'
 import { GetStaticProps } from 'next'
@@ -45,10 +45,10 @@ const Home: NextPage = () => {
         <title>Adi Cahya Saputra</title>
       </Head>
       <div className='no-scrollbar'>
-        <BioSection />
+        <BioSection/>
         <ProjectContext.Provider value={ProjectCTX}>
           { isOnPreview && ( <ProjectPreview/> ) }
-          <ProjectSection />
+          <ProjectSection/>
         </ProjectContext.Provider>
         <Footer />
       </div>
