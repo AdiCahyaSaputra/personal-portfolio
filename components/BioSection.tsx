@@ -16,7 +16,7 @@ const BioSection: React.FC = () => {
 		<>
 			<section className={`w-full h-screen bg-blue-800`}>
 				<div className={`p-4 items-center container fixed z-20 w-full left-[50%] -translate-x-[50%] top-0 mx-auto flex flex-col justify-center`}>
-					<div className={`mt-16 md:mt-10 w-6/12 md:w-3/12`}>
+					<div className={`mt-16 md:mt-10 w-6/12 sm:w-3/12`}>
 						<Image src="/head.png" priority width={1024} height={1024} />
 					</div>
 					<div className={`overflow-hidden ${!loading && 'items-center'} flex justify-center flex-col`}>

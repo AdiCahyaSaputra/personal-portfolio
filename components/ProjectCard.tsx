@@ -21,7 +21,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ projectName, projectImage, pr
 
 	return (
 		<>
-			<article onClick={onClickHandler} className='group p-3 w-full md:w-4/12 mx-auto flex items-center flex-col'>
+			<article onClick={onClickHandler} className='group p-3 w-full md:w-6/12 lg:w-4/12 mx-auto flex items-center flex-col'>
 				<div className='w-full flex overflow-hidden justify-center items-center aspect-video bg-white'>
 					<Image src={projectImage} width={1280} height={720} className="hover:scale-110 transition-all"/>
 				</div>
