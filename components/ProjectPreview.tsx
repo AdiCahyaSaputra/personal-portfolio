@@ -5,7 +5,7 @@ import Image from 'next/image'
 import {useRouter} from "next/router"
 
 const ProjectPreview: React.FC = () => {
-  const [closeProjectPreview, setCloseProjectPreview] = useState(false);
+	const [closeProjectPreview, setCloseProjectPreview] = useState(false);
 	const [closeOverlay, setCloseOverlay] = useState('');
 	const [loading, setLoading] = useState(true);
 
@@ -27,27 +27,24 @@ const ProjectPreview: React.FC = () => {
 
 	return (
 		<>
-			<div className={`fixed transition-all ${closeOverlay} inset-0 bg-black/75 z-40`}>
-
-				<div className={`fixed overflow-y-auto z-50 p-4 delay-200 transition-all duration-300 overflow-hidden ${closeProjectPreview ? '-left-20 w-0' : 'w-10/12 md:w-4/12'} inset-y-0 bg-white/30 backdrop-blur-md`}>
+			<article className="fixed border border-dashed border-white/30 md:border-none flex md:flex-row flex-col w-8/12 md:w-6/12 md:aspect-video aspect-auto backdrop-blur-sm bg-black/20 z-40 top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]">
+				<div className="relative w-full md:w-6/12 h-full bg-white/60">
+					<Image src={ context?.data.projectImage! } layout="fill" objectFit="cover" />
+				</div>
+				<div className="w-full md:w-6/12 h-full p-4 space-y-6 flex flex-col justify-between">
 					<header>
-						<div className={`w-full flex justify-center items-center transition-all duration-100 ${closeProjectPreview && '-translate-x-full'} aspect-video bg-white ${loading && 'animate-pulse'} mx-auto`}>
-							{ !loading && ( <Image src={context?.data.projectImage!} width={1280} height={720}/> ) }
+						<h3 className="font-light tracking-widest uppercase text-white">Latest Project</h3>
+						<div className="mt-4">
+							<h1 className="text-xl font-medium transition-all text-white">{ context?.data.projectName }</h1>
+							<p className="text-gray-300 text-sm mt-2 w-10/12 leading-snug">{ context?.data.projectDesc }</p>
 						</div>
 					</header>
-					<article>
-						<h1 className={`mt-4 ${loading && 'p-4 bg-white/60 animate-pulse'} ${closeProjectPreview && '-translate-x-full'} text-white font-mono font-bold text-xl md:text-2xl`}>{ !loading && context?.data.projectName }</h1>
-						<p className={`${loading && 'p-2 mt-2 bg-gray-500 animate-pulse'}  ${closeProjectPreview && '-translate-x-full'} text-white md:text-lg font-light`}>{ !loading && context?.data.projectDesc }</p>
-						<div onClick={() => router.push(context?.data.projectURL!)} className={`group flex cursor-pointer ${loading ? 'w-6/12' : 'w-max'} duration-200 ${closeProjectPreview && '-translate-x-full' } items-center mt-6 bg-black`}>
-							<FrameworkIcons priority={false} srcIcon='/icons/github.svg' bg="bg-black" size={18} />
-							<p className={`group-hover:text-white/60 ${loading && 'p-2 bg-black animate-pulse'} pr-3 font-mono text-white text-sm line-clamp-1`}>{ !loading && 'Check On Github' }</p>
-						</div>
-					</article> 
+					<a href="#" className="border border-gray-300/60 hover:-translate-y-2 transition-all w-max">
+						<FrameworkIcons srcIcon="/icons/github.svg" priority={false} size={18} bg={'bg-black'}/>
+					</a>
 				</div>
-
-				<div onClick={() => setCloseProjectPreview(!closeProjectPreview)} className="absolute w-2/12 md:w-7/12 inset-y-0 top-0 right-0"></div>
-
-			</div>
+			</article>
+			<div onClick={() => setCloseProjectPreview(!closeProjectPreview)} className={`fixed transition-all ${closeOverlay} inset-0 bg-black/75 z-30`}></div>
 		</>
 	)
 }

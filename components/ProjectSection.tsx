@@ -7,7 +7,7 @@ import data from '../public/json/project.json'
 const ProjectSection: React.FC = () => {
 	return (
 		<>
-			<section className='w-full relative py-12 z-30 min-h-screen bg-black/40 flex justify-center items-center'>
+			<section className='w-full relative py-12 z-20 min-h-screen bg-black/40 flex justify-center items-center'>
 				<main className='container mx-auto p-2 h-full'>
 					<div className='flex flex-col h-full justify-center items-center'>
 						<h1 className='py-1.5 mb-4 w-max text-xl text-white font-bold border-b-2 border-white'>Current Skills</h1>

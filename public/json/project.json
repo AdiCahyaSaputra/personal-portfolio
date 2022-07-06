@@ -2,19 +2,19 @@
   {
     "projectName": "Toko Online Komunitas Discord",
     "projectImage": "/project/img1.jpg",
-    "projectDesc": "Membuat toko online menggunakan NextJS dan Tailwindcss",
+    "projectDesc": "Membuat toko online sederhana yang dikerjakan selama berbulan-bulan karena saya mager",
     "projectURL": "https://github.com/AdiCahyaSaputra/toko-online-dc"
   },
   {
     "projectName": "Auto Manage Files",
     "projectImage": "/project/img2.jpg",
-    "projectDesc": "Rapihkan file download mu secara programmatically",
+    "projectDesc": "Rapihkan folder mu dengan cara yang lebih keren dan cepat",
     "projectURL": "https://github.com/AdiCahyaSaputra/auto-manage-files"
   },
   {
     "projectName": "Epictetus",
     "projectImage": "/project/img3.jpg",
-    "projectDesc": "Slicing design dari figma ke html, css, dan javascript menggunakan Tailwindcss",
+    "projectDesc": "Slicing design figma ke dalam bentuk website asli menggunakan bantuan framework",
     "projectURL": "https://github.com/AdiCahyaSaputra/epictetus-array-id"
   }
 ]
