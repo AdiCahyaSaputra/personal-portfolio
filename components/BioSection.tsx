@@ -10,6 +10,9 @@ const BioSection: React.FC = () => {
 
 	useEffect(() => {
 		setTimeout(() => setLoading(!loading), 200);
+		return () => {
+			clearTimeout();
+		}
 	}, []);
 
 	return (
