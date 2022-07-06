@@ -7,7 +7,6 @@ import {useRouter} from "next/router"
 const ProjectPreview: React.FC = () => {
 	const [closeProjectPreview, setCloseProjectPreview] = useState(false);
 	const [closeOverlay, setCloseOverlay] = useState('');
-	const [loading, setLoading] = useState(true);
 
 	const context = useProjectContext();
 	const router = useRouter();
@@ -21,9 +20,6 @@ const ProjectPreview: React.FC = () => {
 		}
 	}, [closeProjectPreview]);
 
-	useEffect(() => {
-		setTimeout(() => setLoading(false), 500);
-	}, []);
 
 	return (
 		<>
@@ -39,7 +35,7 @@ const ProjectPreview: React.FC = () => {
 							<p className="text-gray-300 text-sm mt-2 w-10/12 leading-snug">{ context?.data.projectDesc }</p>
 						</div>
 					</header>
-					<a href="#" className="border border-gray-300/60 hover:-translate-y-2 transition-all w-max">
+					<a href={ context?.data.projectURL } className="border border-gray-300/60 hover:-translate-y-2 transition-all w-max">
 						<FrameworkIcons srcIcon="/icons/github.svg" priority={false} size={18} bg={'bg-black'}/>
 					</a>
 				</div>
