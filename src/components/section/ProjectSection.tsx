@@ -10,9 +10,9 @@ const link = {
 
 const ProjectSection: React.FC = () => {
 	return (
-		<section className="p-4 h-screen bg-white">
+		<section className="px-4 py-10 min-h-screen bg-white">
 			<Container>
-				<h1 className="text-3xl mt-10 text-black font-bold">Some Project</h1>
+				<h1 className="text-3xl text-black font-bold">Some Project</h1>
 				<p className="font-light mt-1.5">That I've made while working in <span className="font-normal">programming hell</span></p>
 
 				<div className="space-x-3 overflow-x-auto no-scrollbar flex items-center py-4">

@@ -23,9 +23,9 @@ const SkillSection: React.FC = () => {
 	}, [options, containerRef])
 
 	return (
-		<section ref={containerRef} className={`min-h-screen transition-all ${toBlack ? 'bg-black' : 'bg-white'} p-4`}>
+		<section ref={containerRef} className={`py-10 min-h-screen transition-all ${toBlack ? 'bg-black' : 'bg-white'} px-4`}>
 			<Container>
-				<h1 className="text-3xl mt-10 text-white font-bold">Tech stack I've currently used...</h1>
+				<h1 className="text-3xl text-white font-bold">Tech stack I've currently used...</h1>
 				<div className={`transition-all ${toBlack ? 'grid' : 'hidden'} mt-6 grid-cols-12 gap-4`}>
 
 					<TechStackCard tech="NextJS" desc="To build fullstack web application with react" />
