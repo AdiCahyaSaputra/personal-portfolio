@@ -32,14 +32,14 @@ const FooterSection: React.FC = () => {
 					<h1 className="pb-2 tracking-wide text-3xl text-white font-bold">
 						Adics.
 					</h1>
-					<div className={`${toRight} bg-white transition-all absolute bottom-0 w-4/12 h-1.5`}></div>
+					<div className={`${toRight} bg-white transition-all absolute bottom-0 w-4/12 md:w-1/12 h-1.5`}></div>
 				</div>
 				<div className="mt-6 text-white">
 					<p>Email: <span onClick={() => setIsEmailClicked(true)} className="text-blue-400 hover:text-blue-500">adics631@gmail.com</span></p>
 					{isEmailClicked && (<p className="text-red-400 mb-3">Email can't be clicked!</p>)}
 					<p>Instagram: <span onClick={() => window.location.href = link.ig} className="text-blue-400 hover:underline">@adi.response</span></p>
 				</div>
-				<p className="absolute bottom-4 left-4 font-light text-white">I don't have an idea to create the next section <br/>then i will end this here</p>
+				<p className="absolute bottom-4 left-4 font-light text-white">I don't have an idea to create the next section <br />then i will end this here</p>
 			</Container>
 		</footer>
 	)
