@@ -13,7 +13,7 @@ const App = () => {
 				<AboutSection />
 				<SkillSection />
 				<ProjectSection />
-				<FooterSection/>
+				<FooterSection />
 			</div>
 		</ScrollObserver>
 	)
