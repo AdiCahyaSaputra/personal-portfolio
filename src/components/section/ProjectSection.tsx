@@ -5,7 +5,6 @@ const link = {
   web: {
     amf: 'https://auto-manage-files.vercel.app/',
     spotifyClone: 'https://github.com/AdiCahyaSaputra/spotify_clone',
-    linktr: 'https://next-bio-ig.vercel.app/',
     gh: 'https://github.com/AdiCahyaSaputra',
     ecommerce: 'https://toko-online-dc.vercel.app/'
   },
@@ -30,7 +29,6 @@ const ProjectSection: React.FC = () => {
         <div className="space-x-3 overflow-x-auto no-scrollbar flex items-center py-4">
           <ProjectCard link={link.web.amf} project="Auto Manage Files" desc="Manage your folder programmatically using Nodejs" />
           <ProjectCard link={link.web.spotifyClone} project="Spotify Clone" desc="Clone of spotify app build with nextjs and spotify API" />
-          <ProjectCard link={link.web.linktr} project="Linktr Like Website" desc="For your instagram bio (like linktr) build with react and tailwindcss" />
           <ProjectCard link={link.web.ecommerce} project="Simple E-Commerce" desc="Using nextjs and spring boot for backend api" />
         </div>
 
