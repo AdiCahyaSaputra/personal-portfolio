@@ -32,7 +32,7 @@ const ProjectSection: React.FC = () => {
 
         <div className="flex items-center space-x-2">
           <button onClick={() => window.location.href = link.web.gh} className="w-7/12 hover:text-white/60 transition-all p-4 bg-black text-white font-light">See More on <span className="font-bold">Github →</span></button>
-          <button onClick={() => window.location.href = link.web.gh} className="w-5/12 hover:text-white/60 transition-all p-4 bg-black text-white font-light">Or <span className="font-bold">Youtube →</span></button>
+          <button onClick={() => window.location.href = 'https://youtube.com/@adics'} className="w-5/12 hover:text-white/60 transition-all p-4 bg-black text-white font-light">Or <span className="font-bold">Youtube →</span></button>
         </div>
 
         <h1 className="text-3xl mt-10 text-black font-bold">Blog</h1>
