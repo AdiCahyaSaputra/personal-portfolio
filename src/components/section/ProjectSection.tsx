@@ -30,9 +30,9 @@ const ProjectSection: React.FC = () => {
           <ProjectCard link={link.web.rental_mobil} project="Rental Mobil" desc="The place to rent your car if you need emergency money" img='/img/rental_mobil.jpg' />
         </div>
 
-        <div className="flex items-center space-x-2">
-          <button onClick={() => window.location.href = link.web.gh} className="w-7/12 hover:text-white/60 transition-all p-4 bg-black text-white font-light">See More on <span className="font-bold">Github →</span></button>
-          <button onClick={() => window.location.href = 'https://youtube.com/@adics'} className="w-5/12 hover:text-white/60 transition-all p-4 bg-black text-white font-light">Or <span className="font-bold">Youtube →</span></button>
+        <div className="grid grid-cols-12 gap-2">
+          <button onClick={() => window.location.href = link.web.gh} className="md:col-span-4 col-span-12 hover:text-white/60 transition-all p-4 border-2 border-black bg-black text-white font-light">See More on <span className="font-bold">Github →</span></button>
+          <button onClick={() => window.location.href = 'https://youtube.com/@adics'} className="md:col-span-4 col-span-12 hover:text-black/60 border-2 border-black transition-all p-4 bg-transparent text-black font-light">Or <span className="font-bold">Youtube →</span></button>
         </div>
 
         <h1 className="text-3xl mt-10 text-black font-bold">Blog</h1>
@@ -43,7 +43,9 @@ const ProjectSection: React.FC = () => {
           <ProjectCard link={link.blog.b2.link} project="What is Internet?" desc="Learn what is internet and how it works" img='/img/whatisinternet.jpg' />
         </div>
 
-        <button onClick={() => window.location.href = link.blog.me} className="hover:text-white/60 transition-all py-4 px-8 bg-black text-white font-light">See More on <span className="font-bold">Hashnode →</span></button>
+        <div className="grid grid-cols-12 gap-2">
+          <button onClick={() => window.location.href = link.web.gh} className="md:col-span-4 col-span-12 hover:text-white/60 transition-all p-4 border-2 border-black bg-black text-white font-light">See More on <span className="font-bold">Github →</span></button>
+        </div>
 
       </Container>
     </section>

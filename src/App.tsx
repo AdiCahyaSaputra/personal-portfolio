@@ -6,17 +6,17 @@ import SkillSection from "./components/section/SkillSection"
 import ScrollObserver from "./context/scroll-observer"
 
 const App = () => {
-	return (
-		<ScrollObserver>
-			<div className="select-none">
-				<HeroSection />
-				<AboutSection />
-				<SkillSection />
-				<ProjectSection />
-				<FooterSection />
-			</div>
-		</ScrollObserver>
-	)
+  return (
+    <ScrollObserver>
+      <div className="select-none">
+        <HeroSection />
+        <AboutSection />
+        <SkillSection />
+        <ProjectSection />
+        <FooterSection />
+      </div>
+    </ScrollObserver>
+  )
 }
 
 export default App
