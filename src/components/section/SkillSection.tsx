@@ -25,7 +25,7 @@ const SkillSection: React.FC = () => {
     <section ref={containerRef} className={`py-10 transition-all ${toBlack ? 'bg-black' : 'bg-white'} px-4`}>
       <Container>
         <h1 className="text-3xl text-white font-bold">I've Currently Used...</h1>
-        <div className={`transition-all ${toBlack ? 'grid' : 'hidden'} mt-6 grid-cols-12 gap-4`}>
+        <div className={`transition-all ${toBlack ? 'grid' : 'hidden'} my-6 grid-cols-12 gap-4`}>
 
           <TechStackCard tech="NextJS" style={{
             text: 'text-white',
@@ -53,6 +53,9 @@ const SkillSection: React.FC = () => {
           }} />
 
         </div>
+
+        <h1 className="text-3xl text-white font-bold">Special Skills (Maybe)</h1>
+        <p className="text-white mt-2 font-light">Doing Programming Stuff By Only Using <span className="font-medium">My Phone</span> And Being Familiar With <span className="font-bold">CLI</span>. Especially Termux</p>
       </Container>
     </section>
   )

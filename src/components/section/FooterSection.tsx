@@ -30,9 +30,11 @@ const FooterSection: React.FC = () => {
       <Container>
         <div className="relative w-4/12 overflow-hidden mt-10">
           <h1 className="pb-2 tracking-wide text-3xl text-white font-bold">
-            Adics.
+            <span className="relative">
+              Ad
+              <div className={`${toRight} bg-white transition-all absolute -bottom-2 inset-x-0 h-1.5`}></div>
+            </span>ics.
           </h1>
-          <div className={`${toRight} bg-white transition-all absolute bottom-0 w-4/12 md:w-1/12 h-1.5`}></div>
         </div>
         <div className="mt-6 text-white">
           <p>Email: <span onClick={() => setIsEmailClicked(true)} className="text-blue-400 hover:text-blue-500">adics631@gmail.com</span></p>

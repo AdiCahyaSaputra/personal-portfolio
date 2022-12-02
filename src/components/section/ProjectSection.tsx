@@ -25,26 +25,26 @@ const ProjectSection: React.FC = () => {
         <h1 className="text-3xl text-black font-bold">Some Project</h1>
         <p className="font-light mt-1.5">That I've made while working in <span className="font-normal">programming hell</span></p>
 
-        <div className="space-x-3 overflow-x-auto no-scrollbar flex items-center py-4">
+        <div className="space-x-2 overflow-x-auto no-scrollbar flex items-center py-4">
           <ProjectCard link={link.web.amf} project="Auto Manage Files" desc="Manage your folder programmatically using Nodejs" img='/img/amf.jpg' />
           <ProjectCard link={link.web.rental_mobil} project="Rental Mobil" desc="The place to rent your car if you need emergency money" img='/img/rental_mobil.jpg' />
         </div>
 
         <div className="grid grid-cols-12 gap-2">
           <button onClick={() => window.location.href = link.web.gh} className="md:col-span-4 col-span-12 hover:text-white/60 transition-all p-4 border-2 border-black bg-black text-white font-light">See More on <span className="font-bold">Github →</span></button>
-          <button onClick={() => window.location.href = 'https://youtube.com/@adics'} className="md:col-span-4 col-span-12 hover:text-black/60 border-2 border-black transition-all p-4 bg-transparent text-black font-light">Or <span className="font-bold">Youtube →</span></button>
+          <button onClick={() => window.location.href = 'https://youtube.com/@adics'} className="md:col-span-4 col-span-12 hover:text-red-600 border-2 border-black transition-all p-4 bg-transparent text-black font-light">Or <span className="font-bold">Youtube →</span></button>
         </div>
 
         <h1 className="text-3xl mt-10 text-black font-bold">Blog</h1>
         <p className="font-light mt-1.5">Sharing about programming, education, and some random topic</p>
 
-        <div className="space-x-3 overflow-x-auto no-scrollbar flex items-center py-4">
+        <div className="space-x-2 overflow-x-auto no-scrollbar flex items-center py-4">
           <ProjectCard link={link.blog.b1.link} project="React Hooks `useRef()`" desc="Using useRef() hooks to multiple elements in reactjs" img='/img/refmultiple.jpg' />
           <ProjectCard link={link.blog.b2.link} project="What is Internet?" desc="Learn what is internet and how it works" img='/img/whatisinternet.jpg' />
         </div>
 
         <div className="grid grid-cols-12 gap-2">
-          <button onClick={() => window.location.href = link.web.gh} className="md:col-span-4 col-span-12 hover:text-white/60 transition-all p-4 border-2 border-black bg-black text-white font-light">See More on <span className="font-bold">Github →</span></button>
+          <button onClick={() => window.location.href = link.blog.me} className="md:col-span-4 col-span-12 hover:text-white/60 transition-all p-4 border-2 border-black bg-black text-white font-light">See More on <span className="font-bold">Hashnode →</span></button>
         </div>
 
       </Container>
