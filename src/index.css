@@ -7,6 +7,23 @@
 	scrollbar-width: none;
 }
 
+.animate-typing {
+  animation: 
+  type 3.5s steps(20,end),
+  cursor .7s step-end infinite alternate;
+  will-change: transform;
+}
+
+@keyframes type {
+  from { width: 0; }
+  to { width: 30%; }
+}
+
+@keyframes cursor {
+  from, to { border-color: rgba(255, 255, 255, .5) }
+  50% { border-color: white }
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
